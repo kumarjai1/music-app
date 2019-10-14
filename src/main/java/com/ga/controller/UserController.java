@@ -18,27 +18,7 @@ public class UserController {
 	
 	@GetMapping("/hello") 
 	public String hello() {
-		return "Hello World!";
+		return "Hello World!!!!!";
 	}
 	
-//	private List<User> users;	
-//	
-//	@PostConstruct
-//	public void initializeUsers() {
-//		users = new ArrayList<User>();
-//		users.add(new User("batman", "bat"));
-//		users.add(new User("spiderman", "spider"));
-//	}
-//
-//	@GetMapping("/users")
-//	public List<User> getUsers(){
-//		return users;
-//	}
-//	
-//	@GetMapping("/users/{username}")
-//	public User getUser(@PathVariable String username) {	
-//		User foundUser = users.stream().filter(user -> 
-//			user.getUsername().equalsIgnoreCase(username)).findFirst().orElse(null);
-//		return foundUser;
-//	}
 }
