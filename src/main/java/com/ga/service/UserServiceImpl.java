@@ -76,9 +76,15 @@ public class UserServiceImpl implements UserService {
                 true, true, true, true, getGrantedAuthorities(user));
 	}
 	
+	@Override
+    public User addSong(String username, int songId) {
+        return userDao.addSong(username, songId);
+    }
+	
 	private List<GrantedAuthority> getGrantedAuthorities(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(user.getUserRole().getName()));
 		return authorities;
 	}
+	 
 }

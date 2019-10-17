@@ -66,5 +66,26 @@ public class User {
 	public UserRole getUserRole() { return userRole; }
 	
 	public void setUserRole(UserRole userRole) { this.userRole = userRole; }
+	
+	@ManyToMany(fetch = FetchType.LAZY,
+	cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+	@JoinTable(name = "user_song",
+	joinColumns = {@JoinColumn(name = "user_id")},
+	inverseJoinColumns = @JoinColumn(name = "song_id"))
+	private List<Song> songs;
+			
+	public List<Song> getSongs() { return songs; }
+			
+	public void setSongs(List<Song> songs) { this.songs = songs; }
+			
+			
+	public List<Song> addSong(Song song) {
+	if(songs == null)
+	songs = new ArrayList<>();
+			
+	songs.add(song);
+			
+	return songs;
+	}
 
 }

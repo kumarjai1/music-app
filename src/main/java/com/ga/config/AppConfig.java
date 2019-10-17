@@ -35,9 +35,9 @@ public class AppConfig {
 		BasicDataSource dataSource = new BasicDataSource();
 		
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/musicapp");
-		dataSource.setUsername("jai");
-		dataSource.setPassword("jmkc2002");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/spotifyclone");
+//		dataSource.setUsername("jai");
+//		dataSource.setPassword("jmkc2002");
 
 		return dataSource;
 	}
