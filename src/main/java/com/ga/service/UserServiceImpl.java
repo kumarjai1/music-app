@@ -65,10 +65,6 @@ public class UserServiceImpl implements UserService {
 		return userDao.updateUser(user, userId);
 	}
 	
-	 @Override
-	    public User addCourse(String username, int courseId) {
-	        return userDao.addCourse(username, courseId);
-	    }
 	 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
