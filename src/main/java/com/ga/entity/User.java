@@ -67,6 +67,7 @@ public class User {
 	
 	public void setUserRole(UserRole userRole) { this.userRole = userRole; }
 	
+	
 	@ManyToMany(fetch = FetchType.LAZY,
 	cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinTable(name = "user_song",
