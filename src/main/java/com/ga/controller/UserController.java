@@ -43,4 +43,10 @@ public class UserController {
 	public User updateUser(@RequestBody User user, @PathVariable Long userId) {
 		return userService.updateUser(user, userId);
 	}
+	
+	@PutMapping("/{username}/song/{songId}")
+    public User addSong(@PathVariable String username, @PathVariable int songId) {
+        return userService.addSong(username, songId);
+    }
+	
 }
