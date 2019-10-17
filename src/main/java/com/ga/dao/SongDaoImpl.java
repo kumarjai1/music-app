@@ -41,7 +41,7 @@ public class SongDaoImpl implements SongDao {
 		try {
 			session.beginTransaction();
 			
-			songs = session.createQuery("FROM song").getResultList();
+			songs = session.createQuery("FROM Song").getResultList();
 		} finally {
 			session.close();
 		}
