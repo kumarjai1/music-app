@@ -141,4 +141,33 @@ public class UserDaoImpl implements UserDao {
 		return user;
     }
 
+
+	@Override
+	public List<Song> listUserSongs(String username) {
+		List<Song> userSongs = null;
+		User user = null;
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		try {
+			session.beginTransaction();	
+			
+			
+			user = (User)session.createQuery("FROM User u WHERE u.username = '" +
+                    username + "'").uniqueResult();
+			userSongs = user.getSongs();
+		} finally {
+			session.close();
+		}
+		
+		return userSongs;
+		
+		
+	}
+
+
+	
+	
+	
+
 }
