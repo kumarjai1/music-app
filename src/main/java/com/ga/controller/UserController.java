@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ga.entity.JwtResponse;
+import com.ga.entity.Song;
 import com.ga.entity.User;
 import com.ga.service.UserService;
 @RestController
@@ -48,5 +49,10 @@ public class UserController {
     public User addSong(@PathVariable String username, @PathVariable int songId) {
         return userService.addSong(username, songId);
     }
+	
+	@GetMapping("/{username}/song/list")
+	public List<Song> listUserSongs(@PathVariable String username) {
+		return userService.listUserSongs(username);
+	}
 	
 }
