@@ -90,6 +90,8 @@ public class UserServiceImpl implements UserService {
 	public List<Song> listUserSongs(String username) {
 		return userDao.listUserSongs(username);
 	}
+	
+	@Override
 	public User addSong(String username, Long songId) {
 		// TODO Auto-generated method stub
 		return userDao.addSong(username, songId);
