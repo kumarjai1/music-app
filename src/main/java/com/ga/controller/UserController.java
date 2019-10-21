@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ga.entity.JwtResponse;
+import com.ga.entity.Song;
 import com.ga.entity.User;
 import com.ga.service.UserService;
 @RestController
@@ -50,8 +51,17 @@ public class UserController {
 	}
 	
 	@PutMapping("/{username}/song/{songId}")
-    public User addSong(@PathVariable String username, @PathVariable int songId) {
+    public User addSong(@PathVariable String username, @PathVariable long songId) {
         return userService.addSong(username, songId);
     }
+	@DeleteMapping("/{username}/song/{songId}")
+	public Long deleteSong(@PathVariable String username, @PathVariable long songId) {
+		return userService.deleteSong(username, songId);
+	}
+	
+	@GetMapping("/{username}/song/list")
+	public List<Song> listUserSongs(@PathVariable String username) {
+		return userService.listUserSongs(username);
+	}
 	
 }

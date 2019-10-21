@@ -9,5 +9,6 @@ public interface SongDao {
 	public Song createSong(Song song);
 
     	public List<Song> listSongs();
+//    	public Long deleteSong(long songId);
 
 }

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.ga.config.JwtUtil;
 import com.ga.dao.UserDao;
+import com.ga.entity.Song;
 import com.ga.entity.User;
 
 @Service
@@ -76,15 +77,28 @@ public class UserServiceImpl implements UserService {
                 true, true, true, true, getGrantedAuthorities(user));
 	}
 	
-	@Override
-    public User addSong(String username, int songId) {
-        return userDao.addSong(username, songId);
-    }
+	
+
 	
 	private List<GrantedAuthority> getGrantedAuthorities(User user) {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(user.getUserRole().getName()));
 		return authorities;
+	}
+
+	@Override
+	public List<Song> listUserSongs(String username) {
+		return userDao.listUserSongs(username);
+	}
+	public User addSong(String username, Long songId) {
+		// TODO Auto-generated method stub
+		return userDao.addSong(username, songId);
+	}
+
+	@Override
+	public Long deleteSong(String username, Long songId) {
+		// TODO Auto-generated method stub
+		return userDao.deleteSong(username, songId);
 	}
 	 
 }
