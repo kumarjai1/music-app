@@ -73,12 +73,28 @@ public class User {
 		this.userProfile = userProfile;
 	}
     
+//	@JsonIgnore
+//    @ManyToOne(cascade = {CascadeType.DETACH,
+//            CascadeType.MERGE, CascadeType.REFRESH})
+//	@JoinColumn(name = "user_role_id", nullable = false)
+//	private UserRole userRole;
+//>>>>>>> song delete works
 	    
 	public UserRole getUserRole() { return userRole; }
 	
 	public void setUserRole(UserRole userRole) { this.userRole = userRole; }
 	
-			
+//<<<<<<< HEAD
+//=======
+//	@JsonIgnore
+//	@ManyToMany(fetch = FetchType.LAZY,
+//	cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+//	@JoinTable(name = "user_song",
+//	joinColumns = {@JoinColumn(name = "user_id")},
+//	inverseJoinColumns = @JoinColumn(name = "song_id"))
+//	private List<Song> songs;
+//>>>>>>> song delete works
+//			
 	public List<Song> getSongs() { return songs; }
 			
 	public void setSongs(List<Song> songs) { this.songs = songs; }
@@ -91,6 +107,12 @@ public class User {
 	songs.add(song);
 			
 	return songs;
+	}
+	
+	public List<Song> deleteSong(Song song) {
+		if (songs != null)
+			songs.remove(song);
+		return songs;
 	}
 
 }

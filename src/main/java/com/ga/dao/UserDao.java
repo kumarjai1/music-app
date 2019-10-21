@@ -17,8 +17,12 @@ public interface UserDao {
 	
 	public User getUserByUsername(String username);
 	
-	public User addSong(String username, int songId);
+//	public User addSong(String username, int songId);
 	
 	public List<Song> listUserSongs(String username);
+	
+	public User addSong(String username, Long songId);
+
+	public Long deleteSong(String username, Long songId);
 
 }

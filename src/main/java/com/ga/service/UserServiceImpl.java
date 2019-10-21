@@ -77,10 +77,6 @@ public class UserServiceImpl implements UserService {
                 true, true, true, true, getGrantedAuthorities(user));
 	}
 	
-	@Override
-    public User addSong(String username, int songId) {
-        return userDao.addSong(username, songId);
-    }
 	
 
 	
@@ -93,6 +89,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<Song> listUserSongs(String username) {
 		return userDao.listUserSongs(username);
+	}
+	public User addSong(String username, Long songId) {
+		// TODO Auto-generated method stub
+		return userDao.addSong(username, songId);
+	}
+
+	@Override
+	public Long deleteSong(String username, Long songId) {
+		// TODO Auto-generated method stub
+		return userDao.deleteSong(username, songId);
 	}
 	 
 }

@@ -46,9 +46,13 @@ public class UserController {
 	}
 	
 	@PutMapping("/{username}/song/{songId}")
-    public User addSong(@PathVariable String username, @PathVariable int songId) {
+    public User addSong(@PathVariable String username, @PathVariable long songId) {
         return userService.addSong(username, songId);
     }
+	@DeleteMapping("/{username}/song/{songId}")
+	public Long deleteSong(@PathVariable String username, @PathVariable long songId) {
+		return userService.deleteSong(username, songId);
+	}
 	
 	@GetMapping("/{username}/song/list")
 	public List<Song> listUserSongs(@PathVariable String username) {

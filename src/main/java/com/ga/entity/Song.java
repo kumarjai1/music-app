@@ -13,7 +13,7 @@ public class Song {
     @Id
     @Column(name = "song_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(unique = true, nullable = false)
     private String title;
@@ -35,11 +35,11 @@ public class Song {
 
     public void setUsers(List<User> users) { this.users = users; }
     
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
